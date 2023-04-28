@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ny_times/models/article.dart';
 
 import 'cached_image_with_placeholder.dart';
 
 class NyArticlesListItem extends StatelessWidget{
-  const NyArticlesListItem({super.key});
+  Article? article ;
+   NyArticlesListItem({this.article,super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,25 +16,25 @@ class NyArticlesListItem extends StatelessWidget{
        onTap: (){
 
        },
-       title: Padding(
+       title:  Padding(
          padding: const EdgeInsets.only( bottom: 8),
-         child: Text("Supporters of the Democratic candidate Jon Ossoff after his", overflow: TextOverflow.ellipsis,maxLines: 2,),
+         child: Text("${article!.title}", overflow: TextOverflow.ellipsis,maxLines: 2,),
        ),
        subtitle: Column(
          crossAxisAlignment: CrossAxisAlignment.start,
          children: [
-           Text("By DAVID LEONHARDT and STUART A.",overflow: TextOverflow.ellipsis,maxLines: 1,),
+           Text("${article!.byline}",overflow: TextOverflow.ellipsis,maxLines: 1,),
            Row(
              mainAxisAlignment: MainAxisAlignment.spaceBetween,
              children: [
-             Expanded(flex:1,child: Text("THOMPSON dslkdjflksdjfldkfjslkimledikmslmeik",overflow: TextOverflow.ellipsis,maxLines: 1,)),
+             Expanded(flex:1,child: Text("${article!.source}",overflow: TextOverflow.ellipsis,maxLines: 1,)),
 
                Expanded(
                child: Row(
                  children: [
-                   Icon(Icons.date_range, size: 17,),
-                    SizedBox(width: 5,),
-                   Text("2017-06-23",overflow: TextOverflow.ellipsis,maxLines: 1,),
+                   const  Icon(Icons.date_range, size: 17,),
+                   const  SizedBox(width: 5,),
+                   Expanded(child: Text("${article!.publishedDate}",overflow: TextOverflow.ellipsis,maxLines: 1,)),
                  ],
                ),
              ),
@@ -40,8 +42,8 @@ class NyArticlesListItem extends StatelessWidget{
            ],)
          ],
        ),
-       leading: CachedImageWithPlaceholder("https://images.all-free-download.com/images/graphicwebp/physical_fitness_test_513435.webp", BoxFit.cover),
-       trailing: Icon(Icons.keyboard_arrow_right),
+       leading: CachedImageWithPlaceholder("${article!.media![0].mediaMetadata![0].url}", BoxFit.cover),
+       trailing: const Icon(Icons.keyboard_arrow_right),
      ),
    );
   }
