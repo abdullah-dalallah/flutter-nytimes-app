@@ -4,15 +4,15 @@ import 'package:ny_times/widgets/ny_appbar.dart';
 
 import '../widgets/ny_articles_list.dart';
 
-class NyTimesMostPopularHomeScreen extends StatefulWidget{
+class NyTimesMostPopularArticlesHomeScreen extends StatefulWidget{
   final String title;
-  const NyTimesMostPopularHomeScreen({required this.title,super.key});
+  const NyTimesMostPopularArticlesHomeScreen({required this.title,super.key});
 
   @override
-  State<NyTimesMostPopularHomeScreen> createState() => _NyTimesMostPopularHomeScreenState();
+  State<NyTimesMostPopularArticlesHomeScreen> createState() => _NyTimesMostPopularArticlesHomeScreenState();
 }
 
-class _NyTimesMostPopularHomeScreenState extends State<NyTimesMostPopularHomeScreen> {
+class _NyTimesMostPopularArticlesHomeScreenState extends State<NyTimesMostPopularArticlesHomeScreen> {
   @override
   Widget build(BuildContext context) {
      return Scaffold(
