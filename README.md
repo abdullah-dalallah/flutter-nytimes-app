@@ -55,7 +55,26 @@ Overall, if you're building a Flutter app and need to manage and share state bet
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# Major Libraries / Tools
+Category |	Library/Tool | 	Link
+|----------|----------|----------|
+Development|	Flutter - Dart |	https://flutter.dev/
+IDE|	Android Studio	|https://developer.android.com/studio
+Unit| Testing	Flutter |Unit Test	https://docs.flutter.dev/cookbook/testing/unit/introduction
+Presentation Layer Mangement|	provider |	[https://pub.dev/packages/flutter_bloc](https://pub.dev/packages/provider)
+HTTP Client |	Dio |	https://pub.dev/packages/dio
+Image Caching|	cached_network_image|	https://pub.dev/packages/cached_network_image
+Image loader | Shimmer | https://pub.dev/packages/shimmer
+code generation package | json_serializable | https://pub.dev/packages/json_serializable
+
+#Testing
+
+## Running the Unit Tests
+Unit testing for Flutter applications is fully explained in the [Flutter documentation](https://docs.flutter.dev/cookbook/testing/unit/introduction). In this repository, From Android Studio
+
+  * Right Clicking on the Class and select "Run
+  * To see the coverage we have t the select "Run with Coverage"
+
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
