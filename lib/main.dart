@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ny_times/models/article.dart';
+import 'package:ny_times/screens/article_detail.dart';
 import 'package:ny_times/screens/ny_times_most_popular_articles_home_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -25,6 +27,10 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: const NyTimesMostPopularArticlesHomeScreen(title: 'NY Times Most Popular Articles'),
+        routes: <String, WidgetBuilder>{
+          ArticleDetail.routeKey: (BuildContext context) => ArticleDetail(
+              ModalRoute.of(context)!.settings.arguments! as Article),
+        },
       ),
     );
   }

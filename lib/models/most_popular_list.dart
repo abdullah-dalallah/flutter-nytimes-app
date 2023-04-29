@@ -4,12 +4,15 @@
 
 import 'dart:convert';
 
+import 'package:json_annotation/json_annotation.dart';
 import 'package:ny_times/models/article.dart';
+part 'most_popular_list.g.dart';
+
 
 MostPopularList mostPopularListFromJson(String str) => MostPopularList.fromJson(json.decode(str));
 
 String mostPopularListToJson(MostPopularList data) => json.encode(data.toJson());
-
+@JsonSerializable()
 class MostPopularList {
   String? status;
   String? copyright;

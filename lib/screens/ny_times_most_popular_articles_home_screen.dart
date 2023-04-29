@@ -29,8 +29,9 @@ class _NyTimesMostPopularArticlesHomeScreenState extends State<NyTimesMostPopula
                    mainAxisAlignment: MainAxisAlignment.center,
                    children: [
                      if(articleListProvider.mostPopularList.status!=null)
-                      Expanded(child: NyArticlesList(articles: articleListProvider.mostPopularList.articles,),)else
-                              const CircularProgressIndicator(
+                      Expanded(child: NyArticlesList(articles: articleListProvider.mostPopularList.articles,),)
+                     else
+                       const CircularProgressIndicator(
                                   color: Colors.greenAccent,
                                   semanticsLabel: 'Circular progress indicator',
                              ),

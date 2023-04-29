@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:ny_times/data/constants.dart';
 import 'package:ny_times/models/most_popular_list.dart';
 
+
 class ArticleListProvider with ChangeNotifier{
    MostPopularList _mostPopularList = MostPopularList() ;
 
@@ -25,7 +26,8 @@ class ArticleListProvider with ChangeNotifier{
       if(response.statusCode ==200){
         print(response.data.runtimeType);
         var  json = response.data;
-        _mostPopularList = MostPopularList(status: MostPopularList.fromJson(json).status, articles:MostPopularList.fromJson(json).articles, copyright: MostPopularList.fromJson(json).copyright,numResults:MostPopularList.fromJson(json).numResults );
+        _mostPopularList = MostPopularList.fromJson(json);
+        // _mostPopularList = MostPopularList(status: MostPopularList.fromJson(json).status, articles:MostPopularList.fromJson(json).articles, copyright: MostPopularList.fromJson(json).copyright,numResults:MostPopularList.fromJson(json).numResults );
 
 
       }

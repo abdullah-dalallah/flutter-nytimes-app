@@ -4,10 +4,15 @@
 
 import 'dart:convert';
 
+import 'package:json_annotation/json_annotation.dart';
+
+part 'article.g.dart';
+
+
 Article articlesListFromJson(String str) => Article.fromJson(json.decode(str));
 
 String articlesListToJson(Article data) => json.encode(data.toJson());
-
+@JsonSerializable()
 class Article {
   String? uri;
   String? url;
